@@ -1,69 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Warrior Habit Tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Warrior Habit Tracker</h1>
+<h1>⚔ Warrior Habit Tracker</h1>
+
+<div class="stats">
+  <h2 id="score">Weekly Score: 0 / 42</h2>
+  <h3 id="streak">🔥 Streak: 0 days</h3>
+</div>
+
+<div class="progress-container">
+  <div id="progress-bar"></div>
+</div>
 
 <table>
+<thead>
 <tr>
 <th>Habit</th>
 <th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th><th>S</th>
 </tr>
+</thead>
 
-<tr>
-<td>Wake Before 6:30</td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-</tr>
-
-<tr>
-<td>Basketball</td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-</tr>
-
-<tr>
-<td>Taekwondo</td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-</tr>
-
-<tr>
-<td>Study 8 Hours</td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-<td><input type="checkbox"></td>
-</tr>
+<tbody id="habit-table"></tbody>
 
 </table>
 
-<h2 id="score">Score: 0</h2>
-
 <script src="script.js"></script>
-
 </body>
 </html>
