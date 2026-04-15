@@ -1,36 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Warrior Habit Tracker</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Habit Tracker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <main class="app">
+    <header>
+      <h1>📈 Sales Habit Tracker</h1>
+      <p class="subtitle">Track your daily selling actions and build consistent momentum.</p>
+    </header>
 
-<h1>⚔ Warrior Habit Tracker</h1>
+    <section class="panel controls">
+      <label for="habit-input">Add a sales habit</label>
+      <div class="control-row">
+        <input id="habit-input" type="text" placeholder="e.g. Follow up with 10 warm leads">
+        <button id="add-habit-btn">Add Habit</button>
+      </div>
+      <button id="reset-week-btn" class="ghost">Reset Current Week</button>
+    </section>
 
-<div class="stats">
-  <h2 id="score">Weekly Score: 0 / 42</h2>
-  <h3 id="streak">🔥 Streak: 0 days</h3>
-</div>
+    <section class="stats">
+      <article class="panel stat-card">
+        <h2 id="score">Weekly Score: 0 / 0</h2>
+        <p id="completion">Completion: 0%</p>
+      </article>
+      <article class="panel stat-card">
+        <h2 id="streak">🔥 Perfect-Day Streak: 0</h2>
+        <p>Perfect day = every habit completed for that day.</p>
+      </article>
+    </section>
 
-<div class="progress-container">
-  <div id="progress-bar"></div>
-</div>
+    <section class="panel">
+      <div class="progress-container" aria-label="Weekly progress">
+        <div id="progress-bar"></div>
+      </div>
+    </section>
 
-<table>
-<thead>
-<tr>
-<th>Habit</th>
-<th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th><th>S</th>
-</tr>
-</thead>
+    <section class="panel table-wrap">
+      <table>
+        <thead>
+          <tr id="table-head-row">
+            <th>Habit</th>
+          </tr>
+        </thead>
+        <tbody id="habit-table"></tbody>
+      </table>
+    </section>
+  </main>
 
-<tbody id="habit-table"></tbody>
-
-</table>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
