@@ -1,54 +1,181 @@
-body{
-background:#0b1220;
-color:white;
-font-family:Arial;
-text-align:center;
-margin:0;
-padding:20px;
-}
-
-h1{
-margin-bottom:10px;
-}
-
-.stats{
-margin:15px 0;
-}
-
-table{
-margin:auto;
-border-collapse:collapse;
-width:100%;
-max-width:600px;
-}
-
-td,th{
-border:1px solid #334155;
-padding:8px;
-}
-
-th{
-background:#1e293b;
-}
-
-input{
-transform:scale(1.2);
-cursor:pointer;
-}
-
-.progress-container{
-width:100%;
-max-width:600px;
-height:15px;
-background:#1e293b;
-margin:15px auto;
-border-radius:10px;
-overflow:hidden;
-}
-
-#progress-bar{
-height:100%;
-width:0%;
-background:#22c55e;
-transition:0.3s;
-}
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/style.css b/style.css
+index 735878b2596c7dc05a93aefa0d38eb7dcd5abc87..e4a27048c1c598b5411b6982f097f0a1e1bff78c 100644
+--- a/style.css
++++ b/style.css
+@@ -1,54 +1,135 @@
+-body{
+-background:#0b1220;
+-color:white;
+-font-family:Arial;
+-text-align:center;
+-margin:0;
+-padding:20px;
++:root {
++  color-scheme: dark;
+ }
+ 
+-h1{
+-margin-bottom:10px;
++body {
++  margin: 0;
++  background: #0b1220;
++  color: #e2e8f0;
++  font-family: Inter, Arial, sans-serif;
+ }
+ 
+-.stats{
+-margin:15px 0;
++.app {
++  max-width: 1040px;
++  margin: 0 auto;
++  padding: 24px;
+ }
+ 
+-table{
+-margin:auto;
+-border-collapse:collapse;
+-width:100%;
+-max-width:600px;
++h1 {
++  margin: 0;
+ }
+ 
+-td,th{
+-border:1px solid #334155;
+-padding:8px;
++.subtitle {
++  margin-top: 8px;
++  color: #94a3b8;
+ }
+ 
+-th{
+-background:#1e293b;
++.panel {
++  background: #111b2e;
++  border: 1px solid #27344f;
++  border-radius: 14px;
++  padding: 14px;
++  margin-top: 14px;
+ }
+ 
+-input{
+-transform:scale(1.2);
+-cursor:pointer;
++.controls label {
++  display: block;
++  margin-bottom: 8px;
++  font-weight: 600;
+ }
+ 
+-.progress-container{
+-width:100%;
+-max-width:600px;
+-height:15px;
+-background:#1e293b;
+-margin:15px auto;
+-border-radius:10px;
+-overflow:hidden;
++.control-row {
++  display: flex;
++  gap: 8px;
++  flex-wrap: wrap;
+ }
+ 
+-#progress-bar{
+-height:100%;
+-width:0%;
+-background:#22c55e;
+-transition:0.3s;
++input[type="text"] {
++  flex: 1;
++  min-width: 220px;
++  padding: 10px;
++  border: 1px solid #334155;
++  border-radius: 8px;
++  background: #0f172a;
++  color: #e2e8f0;
++}
++
++button {
++  padding: 10px 14px;
++  border: none;
++  border-radius: 8px;
++  background: #22c55e;
++  color: #052e16;
++  font-weight: 700;
++  cursor: pointer;
++}
++
++button.ghost {
++  margin-top: 10px;
++  background: #1e293b;
++  color: #e2e8f0;
++  border: 1px solid #334155;
++}
++
++.stats {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
++  gap: 12px;
++}
++
++.stat-card h2 {
++  margin: 0;
++  font-size: 1.1rem;
++}
++
++.stat-card p {
++  margin: 8px 0 0;
++  color: #94a3b8;
++}
++
++.progress-container {
++  width: 100%;
++  height: 14px;
++  background: #1e293b;
++  border-radius: 10px;
++  overflow: hidden;
++}
++
++#progress-bar {
++  height: 100%;
++  width: 0;
++  background: linear-gradient(90deg, #22c55e, #16a34a);
++  transition: width 0.2s ease;
++}
++
++.table-wrap {
++  overflow-x: auto;
++}
++
++table {
++  width: 100%;
++  border-collapse: collapse;
++}
++
++th,
++td {
++  border: 1px solid #334155;
++  padding: 8px;
++  text-align: center;
++  min-width: 90px;
++}
++
++th {
++  background: #1e293b;
++}
++
++.habit-name {
++  text-align: left;
++  min-width: 220px;
++  font-weight: 600;
++}
++
++input[type="checkbox"] {
++  transform: scale(1.2);
++  cursor: pointer;
+ }
+ 
+EOF
+)
